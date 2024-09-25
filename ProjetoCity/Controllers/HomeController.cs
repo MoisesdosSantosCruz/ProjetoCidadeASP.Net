@@ -1,10 +1,10 @@
-using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoCity.Models;
 using ProjetoCity.Repository;
-using System.Diagnostics;
 using ProjetoCity.Libraries.Login;
-using System.Diagnostics.Eventing.Reader;
+using System.Diagnostics;
+
+
 
 namespace ProjetoCity.Controllers
 {
