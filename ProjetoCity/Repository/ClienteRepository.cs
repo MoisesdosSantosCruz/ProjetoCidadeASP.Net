@@ -95,6 +95,7 @@ public class ClienteRepository : IClienteRepository
                     Clientlist.Add(
                             new Cliente
                             {
+                                Codigo = ((int)dr["codigo"]),
                                 Nome = ((string)dr["nome"]),
                                 Telefone = ((string)dr["telefone"]),
                                 Email = ((string)dr["email"]),
@@ -111,7 +112,7 @@ public class ClienteRepository : IClienteRepository
         using (var conexao = new MySqlConnection(_conexaoMySQL))
         {
             conexao.Open();
-            MySqlCommand cmd = new("SELECT * from tb_Cliente ", conexao);
+            MySqlCommand cmd = new("SELECT * from tb_Cliente where Codigo=@codigo", conexao);
             cmd.Parameters.AddWithValue("@codigo", Id);
 
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);

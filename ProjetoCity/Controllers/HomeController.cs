@@ -82,7 +82,7 @@ namespace ProjetoCity.Controllers
 
 
         //editar
-
+        [HttpPost]
         public IActionResult EditarCliente(Cliente cliente)
         {
 
@@ -97,7 +97,6 @@ namespace ProjetoCity.Controllers
 
         }
 
-        [HttpPost]
         public IActionResult EditarCliente(int id)
         {
             // Carrega a liista de Cliente
