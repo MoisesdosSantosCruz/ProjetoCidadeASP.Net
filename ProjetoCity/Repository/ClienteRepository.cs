@@ -128,21 +128,7 @@ namespace ProjetoCity.Repository
         //buscar todos os clientes por id
         public Cliente ObterCliente(int Id)
         {
-<<<<<<< HEAD
-            conexao.Open();
-            MySqlCommand cmd = new("SELECT * from tb_Cliente where Codigo=@codigo", conexao);
-            cmd.Parameters.AddWithValue("@codigo", Id);
-
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            MySqlDataReader dr;
-
-            Cliente cliente = new Cliente();
-            // retorna conjunto de resultado ,  é funcionalmente equivalente a chamar ExecuteReader().
-            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            while (dr.Read())
-=======
             using (var conexao = new MySqlConnection(_conexaoMySQL))
->>>>>>> e0a13d33af1f4dc7d160df47ce4cb11a6ca8ffd1
             {
                 conexao.Open();
                 MySqlCommand cmd = new("SELECT * from cliente where codigo=@codigo", conexao);
